@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+	
+<head>
+
+	<meta charset="UTF-8">
+	<title>My Analytics</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">	
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/homePageStyle.css') }}">
+	<link rel="stylesheet" href="../static/css/homePageStyle.css">
+	
+	<link rel="shortcut icon" href="{{ url_for('static', filename ='analytics.ico') }}">
+			
+</head>
+
+<body>
+	
+	<h2 id="home-main-heading">My Analytics Portal</h2>
+	
+<!-- ==========   Side Navigation Bar   =========== -->	
+	<div class="sidenav">
+
+	  <a href="homepage">Home</a>
+	 	  
+	  <button class="dropdown-btn">Datasets 
+	    <i class="fa fa-caret-down"></i>
+	  </button>
+	  
+	  <div class="dropdown-container">
+	    <a href="dataset-bank-marketing">Bank Marketing Dataset</a>
+	    <a href="dataset-IPL">IPL Dataset</a>
+	    
+	    <!-- <script type="text/javascript" src="../static/js/myJavaScript.js"></script> -->
+	    <script type="text/javascript" src="{{url_for('static', filename='js/myJavaScript.js') }}"></script>
+
+	  </div>  
+	  
+	  <a href="about">About me</a>
+	  	  
+	</div>
+<!-- ================================================ -->	
+	<div>
+	
+		<p id="Welcome-Text">
+			
+			<div id="home-heading">
+				<strong>Hi ! Welcome to my Data Analytics Portal !</strong>
+			</div>
+			
+			<div id="home-intro">
+				Here, we explore various aspects of Applied Data Science and Analytics using some collected datasets with the following objectives :
+				<ul>
+					<li>Understand, and Analyze the Dataset.</li>
+					<li>Gain Meaningful, Actionable insight on the Dataset.</li>
+					<li>Build and Compare various Predictive Models implemented on .</li>
+				
+				</ul>
+			</div>
+		</p>
+	
+	</div>
+
+</body>
+</html> 

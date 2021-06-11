@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Bank Marketing</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bankPageStyle.css') }}">
+	<link rel="stylesheet" href="../static/css/bankPageStyle.css">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename ='analytics.ico') }}">
+
+</head>
+
+<body>
+
+	<h2 id="bank-main-heading">Bank Marketing Dataset</h2>
+
+<!-- ==========   Side Navigation Bar   =========== -->
+	<div class="sidenav">
+
+	  <a href="homepage">Home</a>
+
+	  <button class="dropdown-btn">Datasets
+	    <i class="fa fa-caret-down"></i>
+	  </button>
+
+	  <div class="dropdown-container">
+	    <a href="dataset-bank-marketing">Bank Marketing Dataset</a>
+	    <a href="dataset-IPL">IPL Dataset</a>
+
+	    <script type="text/javascript" src="../static/js/myJavaScript.js"></script>
+	    <script type="text/javascript" src="{{url_for('static', filename='js/myJavaScript.js') }}"></script>
+
+	  </div>
+
+	  <a href="about">About me</a>
+
+	</div>
+<!-- ====================== Introduction ========================== -->
+
+	<div>
+		<p class="About-Bank-Dataset">
+
+			<div id="bank-dataset-info">
+				<strong>About the Dataset :</strong>
+			</div>
+
+			<div id="bank-intro">
+
+				<p>
+					This data was collected from direct marketing campaigns of a Portuguese banking institution.
+					The campaigns were carried out by phone calls with the intention of selling <b>Bank Term Deposits</b>. Often more than one
+					phone call was required to be made to the same customer with the intention of closing a certain banking deal.
+				</p>
+
+				<p>
+					This is a binary classification dataset with the target variable being whether the customer agrees to close a deal after the
+					campaign or not. Hence, the classification goal is to predict if the customer chooses to subscribe to a term deposit offered
+					by the bank.
+				</p>
+
+			</div>
+		</p>
+	</div>
+
+<!-- ======================== Functional Tabs =========================== -->
+
+<!-- Tab links -->
+	<div class="tab">
+
+	  <script src="../static/js/myJavaScript.js"></script>
+
+	  <button class="tablinks" onclick="openActivity(event, 'Parameters')">Parameters</button>
+	  <button class="tablinks" onclick="openActivity(event, 'Data_Visualization')">Data Visualization</button>
+		<button class="tablinks" onclick="openActivity(event, 'Feature_Selection')">Feature Selection</button>
+	  <button class="tablinks" onclick="openActivity(event, 'Predictive_Models')">Predictive Models</button>
+
+	</div>
+
+
+
+	<!-- Tab content -->
+	<div id="Parameters" class="tabcontent">
+	  <h3>Parameters</h3>
+
+		<!-- #-----------------------   View Parameters Button   -------------------------# -->
+		<a class="action_button" href="view_bank_parameters">View Parameter Details</a>
+		<!-- #----------------------------------------------------------------------------# -->
+
+	</div>
+
+	<div id="Data_Visualization" class="tabcontent">
+	  <h3>Data Visualization</h3>
+
+		<!-- #-----------------------   View Dataset-Head Button   -------------------------# -->
+		<a class="action_button" href="view_dataset_head">View Dataset Head</a>
+		<!-- #----------------------------------------------------------------------------# -->
+
+	</div>
+
+	<div id="Feature_Selection" class="tabcontent" style="display:block">
+	  <h3>Selection of Relevant Features</h3>
+
+		<!-- #-------------------   View Important Parameters Button   -------------------# -->
+		<a class="action_button" href="feature_selection">Drop Irrelevant Columns/Features</a>
+		<!-- #----------------------------------------------------------------------------# -->
+
+        <p> Based on the insight provided by each feature, we drop some of them to reduce redundancy in our
+             dataset, prevent overfitting, simplify our predictive models and and reduce the computational complexity. </p>
+        <div>
+
+            <p> <b>The final list of features used in our predictive analytics models is : </b> </p>
+
+            <ul>
+
+                {% for parameter in data.keys() %}
+                <li> {{ parameter }} </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+	</div>
+
+	<div id="Predictive_Models" class="tabcontent">
+	  <h3>Predictive Models</h3>
+	  <p>Training, Testing and Comparison of various Predictive models</p>
+	</div>
+
+
+
+</body>
+</html>
